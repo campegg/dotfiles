@@ -1,0 +1,2 @@
+# Set up the prompt the way I want it
+PS1='\[\033[1;32m\]\W \[\033[0;37m\]\$ '
