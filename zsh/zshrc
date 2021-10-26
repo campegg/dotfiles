@@ -1,0 +1,81 @@
+# Set $PATH
+export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
+
+
+# Initialize...
+autoload -U colors compinit promptinit
+colors
+compinit -C
+promptinit
+
+
+# Enable colored output from ls, etc
+export CLICOLOR=1
+
+
+# Set up the prompt the way I want it
+PROMPT="%B%F{blue}%M%f %F{green}%2~%f%b %# "
+
+
+# Keep 10000 lines of history within the shell and save it to ~/.zsh_history:
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_EXPIRE_DUPS_FIRST
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.zsh_history
+
+
+# Stop annoying beeps
+unsetopt beep
+unsetopt hist_beep
+unsetopt list_beep
+
+
+# Coloured man pages
+man() {
+    env \
+        LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+        LESS_TERMCAP_md=$(printf "\e[1;31m") \
+        LESS_TERMCAP_me=$(printf "\e[0m") \
+        LESS_TERMCAP_se=$(printf "\e[0m") \
+        LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+        LESS_TERMCAP_ue=$(printf "\e[0m") \
+        LESS_TERMCAP_us=$(printf "\e[1;32m") \
+            man "$@"
+}
+
+
+# Use Homebrew Ruby instead of the default on Mac
+if ! [[ "$OSTYPE" == "darwin"* ]]; then
+    export PATH="/usr/local/opt/ruby/bin:$PATH"
+fi
+
+
+# Other useful aliases
+# Colored output from ls
+alias ls='ls -laGH'
+# Show local ip:
+alias ip="ipconfig getifaddr en0"
+# Lock the screen (when going AFK)
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+# Copy public key to clipboard:
+alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+# Show human friendly numbers and colors
+alias df='df -h'
+alias du='du -h -d 2'
+# Activate python venv
+alias vba='source ./venv/bin/activate'
+# Make pip work better (per https://adamj.eu/tech/2020/02/25/use-python-m-pip-everywhere/)
+alias pip='python -m pip'
+
+# Custom commands
+reload() {
+    #Reload .zshrc
+    source ~/.zshrc &&
+    echo 'BOOM! .zshrc reloaded, yo.'
+}

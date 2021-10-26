@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+SCRIPT_DIR="$( cd "$( dirname "$0" )" && pwd )"
+
+for ARG in "$@"
+do
+    if [ $ARG = "bash" ] || [ $ARG = "all" ]
+    then
+        ln -sf $SCRIPT_DIR/bash/bashrc $HOME/.bashrc
+
+        echo "bash sorted, yo"
+    fi
+
+    if [ $ARG = "git" ] || [ $ARG = "all" ]
+    then
+        ln -sf $SCRIPT_DIR/git/gitconfig $HOME/.gitconfig
+        ln -sf $SCRIPT_DIR/git/gitignore-global $HOME/.gitignore-global
+
+        echo "Git sorted, yo."
+    fi
+
+    if [ $ARG = "mac" ] || [ $ARG = "all" ]
+    then
+        source $SCRIPT_DIR/macos/brew.sh
+        source $SCRIPT_DIR/macos/mac_defaults.sh
+
+        echo "Mac stuff sorted, yo."
+    fi
+
+    if [ $ARG = "zsh" ] || [ $ARG = "all" ]
+    then
+        ln -sf $SCRIPT_DIR/zsh/zshrc $HOME/.zshrc
+
+        echo "zsh sorted, yo."
+    fi
+done
