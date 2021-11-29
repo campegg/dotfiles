@@ -28,12 +28,12 @@ else
 
     # Install apps
     echo "Installing apps..."
-    cask 'appcleaner'
-    cask 'db-browser-for-sqlite'
-    cask 'imageoptim'
-    cask 'launchbar'
-    cask 'subethaedit'
-    cask 'the-unarchiver'
+    brew install cask 'appcleaner'
+    brew install cask 'db-browser-for-sqlite'
+    brew install cask 'imageoptim'
+    brew install cask 'launchbar'
+    brew install cask 'subethaedit'
+    brew install cask 'the-unarchiver'
 fi
 
 # Remove outdated versions from the cellar.
