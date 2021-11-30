@@ -22,7 +22,7 @@ brew install curl nano openssl python3 ruby sqlite3 ssh-copy-id wget
 
 # Install apps
 echo "Installing apps..."
-brew install cask 'appcleaner' 'db-browser-for-sqlite' 'imageoptim' 'launchbar' 'subethaedit' 'the-unarchiver'
+brew install cask appcleaner db-browser-for-sqlite imageoptim inkscape launchbar subethaedit the-unarchiver
 
 
 # Remove outdated versions from the cellar.
