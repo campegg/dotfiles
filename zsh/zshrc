@@ -14,7 +14,7 @@ export CLICOLOR=1
 
 
 # Set up the prompt the way I want it
-PROMPT="%B%F{blue}%M%f %F{green}%2~%f%b %# "
+PROMPT="%B%F{cyan}%M%f %F{green}%2~%f%b %# "
 
 
 # Keep 10000 lines of history within the shell and save it to ~/.zsh_history:
