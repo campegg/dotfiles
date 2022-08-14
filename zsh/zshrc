@@ -13,6 +13,10 @@ promptinit
 export CLICOLOR=1
 
 
+# Make nano the default editor
+export EDITOR=nano
+
+
 # Set up the prompt the way I want it
 PROMPT="%B%F{cyan}%M%f %F{green}%2~%f%b %# "
 
@@ -58,7 +62,10 @@ fi
 
 # Other useful aliases
 # Colored output from ls
-alias ls='ls -laGH'
+alias ls="ls -laGH"
+# Make rm and mv interactive (i.e. ask before doing stuff)
+alias rm="rm -i"
+alias mv="mv -i"
 # Show local ip:
 alias ip="ipconfig getifaddr en0"
 # Lock the screen (when going AFK)
@@ -66,16 +73,7 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 # Copy public key to clipboard:
 alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 # Show human friendly numbers and colors
-alias df='df -h'
-alias du='du -h -d 2'
-# Activate python venv
-alias vba='source ./venv/bin/activate'
+alias df="df -h"
+alias du="du -h -d 2"
 # Make pip work better (per https://adamj.eu/tech/2020/02/25/use-python-m-pip-everywhere/)
-alias pip='python -m pip'
-
-# Custom commands
-reload() {
-    #Reload .zshrc
-    source ~/.zshrc &&
-    echo 'BOOM! .zshrc reloaded, yo.'
-}
+alias pip="python -m pip"
