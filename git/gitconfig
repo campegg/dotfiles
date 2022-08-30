@@ -25,4 +25,4 @@
     untracked = cyan
 
 [init]
-	defaultBranch = main
+    defaultBranch = main

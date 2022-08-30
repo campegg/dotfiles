@@ -8,7 +8,7 @@ do
     then
         ln -sf $SCRIPT_DIR/bash/bashrc $HOME/.bashrc
 
-        echo "bash sorted, yo"
+        echo "bash config done"
     fi
 
     if [ $ARG = "git" ] || [ $ARG = "all" ]
@@ -16,7 +16,7 @@ do
         ln -sf $SCRIPT_DIR/git/gitconfig $HOME/.gitconfig
         ln -sf $SCRIPT_DIR/git/gitignore-global $HOME/.gitignore-global
 
-        echo "Git sorted, yo."
+        echo "Git config done"
     fi
 
     if [ $ARG = "mac" ] || [ $ARG = "all" ]
@@ -24,13 +24,13 @@ do
         source $SCRIPT_DIR/macos/brew.sh
         source $SCRIPT_DIR/macos/mac_defaults.sh
 
-        echo "Mac stuff sorted, yo."
+        echo "Mac config done"
     fi
 
     if [ $ARG = "zsh" ] || [ $ARG = "all" ]
     then
         ln -sf $SCRIPT_DIR/zsh/zshrc $HOME/.zshrc
 
-        echo "zsh sorted, yo."
+        echo "zsh config done"
     fi
 done
