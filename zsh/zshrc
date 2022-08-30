@@ -79,3 +79,7 @@ reload() {
     source ~/.zshrc &&
     echo 'BOOM! .zshrc reloaded, yo.'
 }
+
+garden() {
+    ~/Documents/Projects/garden/venv.nosync/bin/python ~/Documents/Projects/garden/magritte.py -p
+}
