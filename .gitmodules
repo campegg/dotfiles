@@ -1,3 +1,0 @@
-[submodule "nano/nanorc-syntax"]
-	path = nano/nanorc-syntax
-	url = https://github.com/scopatz/nanorc
