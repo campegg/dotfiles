@@ -21,7 +21,6 @@ do
 
     if [ $ARG = "mac" ] || [ $ARG = "all" ]
     then
-        source $SCRIPT_DIR/macos/brew.sh
         source $SCRIPT_DIR/macos/mac_defaults.sh
 
         echo "Mac config done"
