@@ -26,6 +26,13 @@ do
         echo "Mac config done"
     fi
 
+    if [ $ARG = "ssh" ] || [ $ARG = "all" ]
+    then
+        ln -sf $SCRIPT_DIR/ssh/config $HOME/.ssh/config
+    
+        echo "SSH config done"
+    fi
+
     if [ $ARG = "zsh" ] || [ $ARG = "all" ]
     then
         ln -sf $SCRIPT_DIR/zsh/zshrc $HOME/.zshrc

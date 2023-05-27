@@ -1,0 +1,3 @@
+# Keep SSH connections alive
+Host *
+  ServerAliveInterval 60
